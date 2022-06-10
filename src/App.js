@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable react/jsx-no-undef */
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Layout from "./components/pages/Layout";
+import Home from "./components/pages/Home";
+import Contact from "./components/pages/Contact";
+import LoginReg from "./components/pages/auth/LoginReg";
+import Dashboard from "./components/pages/Dashboard";
+import EditPage from "./components/pages/EditPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <>
+         <BrowserRouter>
+            <Routes>
+               <Route path="/" element={<Layout />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="login" element={<LoginReg />} />
+               </Route>
+               <Route path="/dashboard" element={<Dashboard />}/>
+               <Route path="edit" element={<EditPage />} />
+            </Routes>
+         </BrowserRouter>
+      </>
+   );
 }
 
 export default App;
