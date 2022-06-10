@@ -18,8 +18,8 @@ function App() {
                   <Route path="contact" element={<Contact />} />
                   <Route path="login" element={<LoginReg />} />
                </Route>
-               <Route path="/dashboard" element={<Dashboard />}/>
-               <Route path="edit" element={<EditPage />} />
+               <Route path="/dashboard" element={<Dashboard />} />
+               {/* <Route path="edit" element={<EditPage />} /> */}
             </Routes>
          </BrowserRouter>
       </>
